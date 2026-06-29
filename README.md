@@ -78,8 +78,8 @@ The server currently supports a single shared in-memory database accessed concur
 Clone the repo and run:
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/sarvaniun/RedisLite.git
+cd RedisLite
 make
 ```
 
