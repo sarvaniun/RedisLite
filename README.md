@@ -1,9 +1,5 @@
 # RedisLite — A Multithreaded In-Memory Key-Value Store in C
 
-Language: C
-Build: Makefile
-Platform: Linux
-
 RedisLite is a Redis-inspired, multithreaded in-memory key-value store built from scratch in C.
 
 The project uses raw TCP sockets for client-server communication, a custom thread pool for concurrent request handling, and a hash table as the storage backend. It was built as a systems programming project to better understand networking, multithreading, synchronization, and low-level memory management.
@@ -15,7 +11,7 @@ The project uses raw TCP sockets for client-server communication, a custom threa
 - TCP client-server architecture using POSIX sockets
 - Fixed-size thread pool with a producer-consumer queue
 - Thread-safe in-memory hash table
-- Graceful server shutdown using `SIGINT`
+- Graceful server shutdown using SIGINT, condition variables, and thread joining.
 - Multiple concurrent client connections
 - Command parsing and request validation
 - Supported commands:
@@ -163,6 +159,8 @@ city
 OK
 > GET name
 NULL
+> COUNT
+1
 > PING
 PONG
 ```
@@ -213,7 +211,7 @@ The thread pool maintains a fixed array of `pthread_t` threads and a **circular 
 
 ## What I Learned
 
-Through this project, I gained more hands-on experience with::
+Through this project, I gained more hands-on experience with:
 
 - TCP socket programming
 - POSIX threads
